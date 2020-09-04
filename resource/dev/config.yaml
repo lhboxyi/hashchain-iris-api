@@ -1,0 +1,64 @@
+appserver:
+  port: 8888
+  path: /hjj
+
+#postgres:
+#  host: 10.59.76.12
+#  port: 5432
+#  db: dc_geo_traffic_pg_db
+#  username: postgres
+#  password: postgres
+
+mysql:
+  host: localhost
+  port: 3306
+  db: hashchainMysql
+  username: root
+  password: rootpassword
+
+mongo:
+  url: dev-mog-m.a.pa.com
+  port: 27017
+  database: dc_metadata_db
+  username: dev
+  password: dev
+  authSource: admin
+
+openapi:
+  outFileDir: ../view
+  outFileName: apiDoc.html
+
+logsetting:
+  fileDir: d:/logs
+  fileName: crawlab-service
+  maxRemainCnt: 10
+  logLevel: INFO
+
+validatetokenurl: http://datacenter.st.anhouse.com.cn/authority-service/auth/verifyToken?jwtToken=
+
+#rpcx注册服务地址端口
+rpcx:
+  host: localhost
+  port: 8787
+
+redis:
+  timeout: 10000 #客户端超时时间单位是毫秒 默认是2000
+  commandTimeout: 5000
+  maxIdle: 300 #最大空闲数
+  minIdle: 2 #最大空闲数
+  maxTotal: 1000 #控制一个pool可分配多少个jedis实例,用来替换上面的redis.maxActive,如果是jedis 2.4以后用该属性
+  maxWaitMillis: 1000 #最大建立连接等待时间。如果超过此时间将接到异常。设为-1表示无限制。
+  minEvictableIdleTimeMillis: 300000 #连接的最小空闲时间 默认1800000毫秒(30分钟)
+  numTestsPerEvictionRun: 1024 #每次释放连接的最大数目,默认3
+  timeBetweenEvictionRunsMillis: 30000 #逐出扫描的时间间隔(毫秒) 如果为负数,则不运行逐出线程, 默认-1
+  testOnBorrow: true #是否在从池中取出连接前进行检验,如果检验失败,则从池中去除连接并尝试取出另一个
+  testWhileIdle: true #在空闲时检查有效性, 默认false
+  password: Ryh74OCX1u #密码
+
+  cluster:
+    #设置key的生存时间，当key过期时，它会被自动删除
+    expire-seconds: 120
+    # 重定向次数
+    max-redirects: 5
+    #设置redis集群的节点信息
+    nodes: 10.59.72.72:6379,10.59.72.73:6379,10.59.72.74:6379
