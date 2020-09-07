@@ -45,11 +45,12 @@ func GenerateToken(user models.TrackUser) string {
 		"iss":       "Iris",                                                   //签发者
 		"iat":       time.Now().Unix(),                                        //签发时间
 		"jti":       "9527",                                                   //jwt的唯一身份标识，主要用来作为一次性token,从而回避重放攻击。
-		"exp":       time.Now().Add(10 * time.Hour * time.Duration(1)).Unix(), //过期时间
+		"exp":       time.Now().Add(5 * time.Hour * time.Duration(1)).Unix(), //过期时间
 	})
 	tokenString, _ := token.SignedString([]byte(JwtKey))
-	fmt.Println("签发时间：", time.Now().Unix())
-	fmt.Println("到期时间：", time.Now().Add(10 * time.Hour * time.Duration(1)).Unix())
+	formatStr := "2006-01-02 15:04:05"
+	fmt.Println("签发时间：", time.Now().Format(formatStr))
+	fmt.Println("到期时间：", time.Now().Add(5 * time.Hour * time.Duration(1)).Format(formatStr))
 	return tokenString
 }
 

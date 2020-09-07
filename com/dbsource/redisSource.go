@@ -1,12 +1,6 @@
 package datasource
 
-import (
-	"fmt"
-	//redis2 "github.com/go-redis/redis"
-	"github.com/go-redis/redis/v7"
-	"github.com/sirupsen/logrus"
-	"github.com/spf13/viper"
-)
+import "github.com/go-redis/redis/v7"
 
 //func GetClusterClient() *redis2.ClusterClient {
 //	var client *redis2.ClusterClient
@@ -24,7 +18,7 @@ import (
 /**
  * 获取redis集群客户端
  */
-func GetClusterClient() *redis.ClusterClient {
+/*func GetClusterClient() *redis.ClusterClient {
 	//nodes := viper.GetStringSlice("redis.cluster.nodes")
 	timeout := viper.GetDuration("redis.timeout")
 	readTimeout := viper.GetDuration("redis.readTimeout")
@@ -36,7 +30,8 @@ func GetClusterClient() *redis.ClusterClient {
 	clusterClient := redis.NewClusterClient(&redis.ClusterOptions{
 		// 填写master主机
 		//Addrs: nodes,
-		Addrs: []string{"10.59.72.72:6379","10.59.72.73:6379","10.59.72.74:6379"},
+		/*Addrs: []string{"10.59.72.72:6379","10.59.72.73:6379","10.59.72.74:6379"},
+		Addrs: []string{"127.0.0.1:6379"},
 		// 设置密码
 		Password: password,
 		// 设置连接超时
@@ -53,4 +48,24 @@ func GetClusterClient() *redis.ClusterClient {
 		logrus.Errorf("连接redis集群客户端失败:%s", pingErr.Error())
 	}
 	return clusterClient
+}
+*/
+
+
+// 声明一个全局的rdb变量
+var rdb *redis.Client
+
+// 初始化连接
+func initClient() (err error) {
+	rdb = redis.NewClient(&redis.Options{
+		Addr:     "localhost:6379",
+		Password: "hashchainToken", // no password set
+		DB:       0,  // use default DB
+	})
+
+	_, err = rdb.Ping().Result()
+	if err != nil {
+		return err
+	}
+	return nil
 }

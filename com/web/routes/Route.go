@@ -74,10 +74,13 @@ func Register() {
 
 
 
-	app.Run(iris.Addr(fmt.Sprintf(":%d", appPort)),
+	/*app.Run(iris.Addr(fmt.Sprintf(":%d", appPort)),
 		iris.WithoutServerError(iris.ErrServerClosed),//忽略服务器错误
 		iris.WithOptimizations,//让程序自身尽可能的优化
 		iris.WithCharset("UTF-8"), // 国际化
+	)*/
+
+	app.Run(iris.TLS(fmt.Sprintf(":%d", appPort),"/home/zhangzhemin/iris-api/ellipticcurve_public.crt","/home/zhangzhemin/iris-api/ellipticcurve.key"),
 	)
 
 	//当报 `404` 时候渲染自定义的 404 错误模板

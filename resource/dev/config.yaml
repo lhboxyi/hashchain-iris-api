@@ -10,19 +10,22 @@ appserver:
 #  password: postgres
 
 mysql:
-  host: localhost
+  host: 127.0.0.1
   port: 3306
   db: hashchainMysql
   username: root
   password: rootpassword
 
 mongo:
-  url: dev-mog-m.a.pa.com
+  dbhost: 127.0.0.1:27017
+  authdb: admin
+  url: mongodb://root:rootpassword@127.0.0.1:27017/hashchainMongo
   port: 27017
-  database: dc_metadata_db
-  username: dev
-  password: dev
-  authSource: admin
+  database: hashchainMongo
+  username: root
+  password: rootpassword
+  timeout: 60 * time.Second
+  poollimit: 4096
 
 openapi:
   outFileDir: ../view
@@ -38,7 +41,7 @@ validatetokenurl: http://datacenter.st.anhouse.com.cn/authority-service/auth/ver
 
 #rpcx注册服务地址端口
 rpcx:
-  host: localhost
+  host: 127.0.0.1
   port: 8787
 
 redis:
@@ -53,7 +56,7 @@ redis:
   timeBetweenEvictionRunsMillis: 30000 #逐出扫描的时间间隔(毫秒) 如果为负数,则不运行逐出线程, 默认-1
   testOnBorrow: true #是否在从池中取出连接前进行检验,如果检验失败,则从池中去除连接并尝试取出另一个
   testWhileIdle: true #在空闲时检查有效性, 默认false
-  password: Ryh74OCX1u #密码
+  password: hashchainToken #密码
 
   cluster:
     #设置key的生存时间，当key过期时，它会被自动删除

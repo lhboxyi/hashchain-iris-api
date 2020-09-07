@@ -44,8 +44,11 @@ func main() {
 		fmt.Println("pw ok")
 	}*/
 
-	datasource.InstanceMaster()
 
+
+
+	datasource.InstanceMaster()
+	datasource.Init()
 	//启动iris服务
 	routes.Register() //go version
 

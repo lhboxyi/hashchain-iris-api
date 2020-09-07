@@ -11,13 +11,14 @@ require (
 	github.com/andybalholm/brotli v1.0.1-0.20200619015827-c3da72aa01ed // indirect
 	github.com/axgle/mahonia v0.0.0-20180208002826-3358181d7394
 	github.com/aymerick/raymond v2.0.3-0.20180322193309-b565731e1464+incompatible // indirect
-	github.com/betacraft/yaag v1.0.0
+	github.com/betacraft/yaag v1.0.0 // indirect
 	github.com/dgraph-io/badger v1.6.0 // indirect
 	github.com/dgraph-io/badger/v2 v2.0.3 // indirect
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/etcd-io/bbolt v1.3.3 // indirect
 	github.com/fsnotify/fsnotify v1.4.9
 	github.com/gavv/httpexpect v2.0.0+incompatible // indirect
+	github.com/globalsign/mgo v0.0.0-20181015135952-eeefdecb41b8
 	github.com/go-basic/ipv4 v1.0.0
 	github.com/go-errors/errors v1.1.1
 	github.com/go-redis/redis/v7 v7.4.0
@@ -50,9 +51,10 @@ require (
 	github.com/lu4p/cat v0.1.3
 	github.com/mediocregopher/radix/v3 v3.5.2 // indirect
 	github.com/microcosm-cc/bluemonday v1.0.3 // indirect
+	github.com/nats-io/nats-server/v2 v2.1.8 // indirect
 	github.com/rifflock/lfshook v0.0.0-20180920164130-b9218ef580f5
 	github.com/robfig/cron v1.2.0
-	github.com/rs/cors v1.7.0
+	github.com/rs/cors v1.7.0 // indirect
 	github.com/schollz/closestmatch v2.1.0+incompatible // indirect
 	github.com/sirupsen/logrus v1.6.0
 	github.com/smallnest/rpcx v0.0.0-20200901102701-09a8d917732a
