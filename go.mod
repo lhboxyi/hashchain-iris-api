@@ -27,6 +27,7 @@ require (
 	github.com/gomodule/redigo v1.8.2 // indirect
 	github.com/google/uuid v1.1.2-0.20200519141726-cb32006e483f // indirect
 	github.com/hashicorp/go-version v1.2.1 // indirect
+	github.com/hyperledger/fabric-sdk-go v1.0.0-beta3
 	github.com/iris-contrib/httpexpect/v2 v2.0.5 // indirect
 	github.com/iris-contrib/jade v1.1.4 // indirect
 	github.com/iris-contrib/middleware/cors v0.0.0-20200810001613-32cf668f999f
@@ -58,7 +59,7 @@ require (
 	github.com/schollz/closestmatch v2.1.0+incompatible // indirect
 	github.com/sirupsen/logrus v1.6.0
 	github.com/smallnest/rpcx v0.0.0-20200901102701-09a8d917732a
-	github.com/spf13/cast v1.3.0
+	github.com/spf13/cast v1.3.1
 	github.com/spf13/viper v1.7.1
 	github.com/square/go-jose/v3 v3.0.0-20200630053402-0a67ce9b0693 // indirect
 	github.com/swaggo/swag v1.6.7 // indirect
